@@ -1,7 +1,7 @@
 sudo apt-get update && sudo apt-get upgrade -y
 
 # Install apt packages
-sudo apt-get install git open-iscsi nfs-common cryptsetup -y
+sudo apt-get install git open-iscsi nfs-common cryptsetup dnsutils -y
 
 # Check if GitHub CLI is already installed; if not, add its repository to Apt and install it
 if ! command -v gh 2>&1 >/dev/null
