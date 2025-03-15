@@ -1,10 +1,7 @@
 sudo apt-get update && sudo apt-get upgrade -y
 
-# Check if Git is already installed; if not, install it using APT
-if ! command -v git 2>&1 >/dev/null
-then
-    sudo apt-get install git -y
-fi
+# Install apt packages
+sudo apt-get install git open-iscsi nfs-common cryptsetup -y
 
 # Check if GitHub CLI is already installed; if not, add its repository to Apt and install it
 if ! command -v gh 2>&1 >/dev/null
