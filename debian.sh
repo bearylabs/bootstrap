@@ -1,7 +1,10 @@
 sudo apt-get update && sudo apt-get upgrade -y
 
 # Install apt packages
-sudo apt-get install git open-iscsi nfs-common cryptsetup dnsutils -y
+sudo apt-get install tmux git open-iscsi nfs-common cryptsetup dnsutils -y
+
+
+sudo apt-get install tmux 
 
 # Check if GitHub CLI is already installed; if not, add its repository to Apt and install it
 if ! command -v gh 2>&1 >/dev/null
@@ -14,17 +17,6 @@ then
         && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
         && sudo apt update \
         && sudo apt install gh -y
-fi
-
-# Check if Tmux is already installed; if not, download git repo and install it
-if ! command -v tmux 2>&1 >/dev/null
-then
-    git clone https://github.com/tmux/tmux.git
-    cd tmux
-    sh autogen.sh
-    ./configure
-    make && sudo make install
-    cd ..
 fi
 
 # Check if Helm is already installed; if not, add its repository to Apt and install it
