@@ -1,7 +1,7 @@
 sudo apt-get update && sudo apt-get upgrade -y
 
 # Install apt packages
-sudo apt-get install tmux git open-iscsi nfs-common cryptsetup dnsutils -y
+sudo apt-get install curl tmux git open-iscsi nfs-common cryptsetup dnsutils -y
 
 
 sudo apt-get install tmux 
